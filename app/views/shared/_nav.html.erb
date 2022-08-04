@@ -1,4 +1,4 @@
-<nav class="ui borderless inverted large menu">
+<nav class="ui borderless inverted huge menu">
   <div class="ui container">
     <%= link_to "Chatroom", root_path, class: "item" %>
     <%= link_to "Messages", root_path, class: "item" %>
@@ -6,10 +6,7 @@
     <div class="right menu">
 
       <div class="item">
-        <div class="ui primary button">
-          <i class="alternative sign in icon"></i>
-          Sign Up
-        </div>
+        <%= link_to raw("<i class=\"alternative sign in icon\"></i>Sign Up"), login_path, class: "ui primary button" %>
       </div>
 
       <div class="ui dropdown item">

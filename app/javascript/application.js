@@ -5,4 +5,6 @@ import "jquery"
 import "popper.js"
 import 'semantic-ui'
 
-$('.ui.dropdown').dropdown();
+$(document).on("turbo:load", () => {
+  $('.ui.dropdown').dropdown();
+});
