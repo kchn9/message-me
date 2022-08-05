@@ -1,1 +1,17 @@
 @import 'semantic-ui';
+
+.only-mobile {
+  display: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .only-desktop {
+    display: none;
+  }
+
+  .only-mobile {
+    display: table !important;
+    max-width: 100vw;
+  }
+}
+

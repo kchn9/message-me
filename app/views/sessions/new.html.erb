@@ -1,1 +1,33 @@
-<h1>Welcome to login page!</h1>
+  <section class="ui sizer vertial segment basic">
+      <h1 class="ui massive center aligned icon header">
+        <i class="unlock alternate icon"></i>
+        <div class="content">
+          Log in to continue
+          <div class="sub header">Or create new account to join the community</div>
+        </div>
+      </h1>
+  </section>
+
+<div class="ui secondary segment stackable raised padded">
+
+  <div class="ui two column very relaxed stackable grid">
+    <div class="one wide column"></div>
+
+    <div class="six wide column">
+      <%= render "login_form" %>
+    </div>
+
+    <div class="only-mobile column ui horizontal divider">
+      Or
+    </div>
+
+    <div class="six wide column right floated">
+      <%= render "sign_up_form" %>
+    </div>
+
+    <div class="one wide column"></div>
+  </div>
+
+  <div class="only-desktop ui vertical divider">Or</div>
+
+</div>
