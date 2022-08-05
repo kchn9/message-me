@@ -1,7 +1,26 @@
-<section class="ui container">
-<div class="ui minimal comments">
-  <h2 class="ui dividing header">Livechat</h2>
-  <%= render "comment" %>
+<div class="ui container padded comments raised segment blue secondary">
+  <h2 class="ui header">Chat</h2>
+  <div class="ui segment basic clearing">
+    <%= render "message" %>
+  </div>
+
+  <div class="ui segment basic">
+    <div class="comment ui segment basic">
+      <a class="avatar">
+        <%= random_avatar_for_user("Natalka") %>
+      </a>
+      <div class="content">
+        <a class="author">Nati</a>
+        <div class="metadata">
+          <span class="date">Today at 5:44PM</span>
+        </div>
+        <div class="text">
+          What is this!?
+        </div>
+      </div>
+    </div>
+  </div>
+
   <form class="ui reply form">
     <div class="field">
       <textarea></textarea>
@@ -11,4 +30,3 @@
     </div>
   </form>
 </div>
-</section>
