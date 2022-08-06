@@ -1,19 +1,22 @@
 <div class="ui raised padded blue secondary small segment container">
   <h2 class="ui header center aligned">Who is online?</h2>
   <section class="ui large relaxed animated selection divided list">
-    <div class="item">
-      <%= random_avatar_for_user("Natalka") %>
-      <div class="content">
-        <a class="header">Natalka</a>
-        <div class="description">Last seen <a><b>just now.</b></a> </div>
+
+  <% if @users %>
+    <% @users.each do |user| %>
+      <div class="item">
+        <%= get_avatar_for_username("#{user.username}") %>
+        <div class="content">
+          <a class="header">
+            <%= user.username %>
+          </a>
+          <div class="description">
+            Last seen <a><b>just now.</b></a>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="item">
-      <%= random_avatar_for_user("Mati") %>
-      <div class="content">
-        <a class="header">Mati</a>
-        <div class="description">Last seen <a><b>just now.</b></a> </div>
-      </div>
-    </div>
+    <% end %>
+  <% end %>
+
   </section>
 </div>

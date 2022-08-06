@@ -1,14 +1,17 @@
 <div class="ui raised padded blue secondary small segment container">
   <div class="ui segment container minimal comments">
 
-    <div class="ui segment small basic clearing"> <!-- clearing for user messages -->
-      <%= render "message" %>
-    </div>
+    <% @messages.each do |message|  %>
+      <div class="ui segment small basic clearing"> <!-- clearing for user messages -->
+        <%= render "message", message: message %>
+      </div>
+    <% end %>
 
-    <div class="ui small segment basic">
+
+    <!--div class="ui small segment basic">
       <div class="comment ui segment basic">
         <a class="avatar">
-          <%= random_avatar_for_user("Natalka") %>
+          <%= get_avatar_for_username("Natalka") %>
         </a>
         <div class="content">
           <a class="author">Nati</a>
@@ -20,7 +23,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div-->
 
   </div>
 
