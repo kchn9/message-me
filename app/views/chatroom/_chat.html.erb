@@ -1,29 +1,10 @@
 <div class="ui raised padded blue secondary small segment container">
-  <div class="ui segment container minimal comments">
+  <div class="ui segment small container minimal comments">
 
     <% @messages.each do |message|  %>
-      <div class="ui segment small basic clearing"> <!-- clearing for user messages -->
-        <%= render "message", message: message %>
-      </div>
+      <%= render "chatroom/messages/my_message", message: message %>
+      <%= render "chatroom/messages/message", message: message %>
     <% end %>
-
-
-    <!--div class="ui small segment basic">
-      <div class="comment ui segment basic">
-        <a class="avatar">
-          <%= get_avatar_for_username("Natalka") %>
-        </a>
-        <div class="content">
-          <a class="author">Nati</a>
-          <div class="metadata">
-            <span class="date">Today at 5:44PM</span>
-          </div>
-          <div class="text">
-            Jedzonko na 15 i pałeczki dawać!
-          </div>
-        </div>
-      </div>
-    </div-->
 
   </div>
 
