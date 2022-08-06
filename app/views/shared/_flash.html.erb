@@ -1,0 +1,16 @@
+<div style="position: fixed; bottom: 20px; right: 20px;">
+  <% flash.each do |name, msg| %>
+    <div class="<%= "ui floating message #{name} transition" %>">
+      <i class="close icon"></i>
+      <div class="header">
+        <%= name.capitalize %>
+      </div>
+      <p>
+        <%= msg %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+
+

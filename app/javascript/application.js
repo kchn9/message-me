@@ -6,7 +6,14 @@ import "popper.js"
 import 'semantic-ui'
 
 $(document).on("turbo:load", () => {
+
   $('.ui.dropdown').dropdown();
-  $('.ui.dimmer').dimmer('show')
-;
+
+  $('.message .close').on('click', function() {
+      $(this)
+        .closest('.message')
+        .transition('fade')
+      ;
+  });
+
 });
