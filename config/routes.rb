@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   delete "/login", to: "sessions#destroy"
   # users
   get "/sign-up", to: "users#new"
+  match "/sign-up", via: :post, to: "users#create"
 end

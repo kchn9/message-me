@@ -1,4 +1,20 @@
-<section class="ui massive padded segment basic"></section>
+<section class="ui padded segment basic">
+  <% if @user.errors.any? %>
+    <div class="ui error floating tiny message">
+      <i class="close icon"></i>
+      <div class="header">
+        There were some errors with account creation
+      </div>
+      <ul class="list">
+          <% @user.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+</section>
 
 <main class="ui grid centered">
   <div class="twelve wide column">

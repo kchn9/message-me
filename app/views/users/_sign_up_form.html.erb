@@ -1,4 +1,4 @@
-<%= form_with model: @user, data: { turbo: false }, class: "ui form" do |f| %>
+<%= form_with model: @user, url: sign_up_path, local: true, data: { turbo: false }, class: "ui form" do |f| %>
   <div class="required field">
     <%= f.label :username %>
     <div class="ui left icon input">
@@ -16,7 +16,7 @@
   <div class="required field">
     <%= f.label "Repeat password" %>
     <div class="ui left icon input">
-      <%= f.password_field :password, placeholder: "Repeat password" %>
+      <%= f.password_field :password_confirmation, placeholder: "Repeat password" %>
       <i class="lock icon"></i>
     </div>
   </div>
