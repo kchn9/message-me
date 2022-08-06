@@ -1,0 +1,26 @@
+<section class="ui massive padded segment basic"></section>
+
+<main class="ui grid centered">
+  <div class="twelve wide column">
+
+    <div class="ui top attached center aligned header">
+      <h1 class="ui header">
+      Create new account
+      </h1>
+      <h2 class="ui sub header">
+      Join the community
+      </h2>
+    </div>
+
+    <section class="ui fluid attached huge segment padded secondary">
+      <%= render "sign_up_form" %>
+    </section>
+
+    <div class="ui bottom attached warning message">
+      <i class="icon help"></i>
+      Already signed up? <%= link_to "Login here", login_path%>
+    </div>
+
+  </div>
+</main>
+

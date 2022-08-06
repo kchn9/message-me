@@ -7,4 +7,6 @@ import 'semantic-ui'
 
 $(document).on("turbo:load", () => {
   $('.ui.dropdown').dropdown();
+  $('.ui.dimmer').dimmer('show')
+;
 });
