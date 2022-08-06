@@ -1,6 +1,6 @@
 <h2 class="ui center aligned header">Log in</h2>
 
-<%= form_with scope: :session, url: login_path , data: { turbo: false }, class: "ui form" do |f| %>
+<%= form_for :session, url: login_path , data: { turbo: false }, class: "ui form" do |f| %>
   <div class="field">
     <%= f.label :username %>
     <div class="ui left icon input">
