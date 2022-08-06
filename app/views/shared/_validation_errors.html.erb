@@ -1,0 +1,17 @@
+<section class="ui segment small basic">
+  <% if model.errors.any? %>
+    <div class="ui error floating tiny message">
+      <i class="close icon"></i>
+      <div class="header">
+        There were some errors with account creation
+      </div>
+      <ul class="list">
+          <% model.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+</section>
