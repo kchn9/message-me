@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   # users
   get "/sign-up", to: "users#new"
-  resource :users, except: [:new]
 end
