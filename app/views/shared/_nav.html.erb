@@ -6,7 +6,7 @@
     <div class="right menu">
 
       <div class="item">
-        <div class="ui primary buttons">
+        <div class="ui primary">
           <% if logged_in? %>
             <%= link_to raw("<i class=\"alternative sign in icon\"></i>Log out"), login_path, data: { "turbo-method": :delete }, class: "ui primary button" %>
           <% else %>
@@ -16,14 +16,17 @@
       </div>
 
       <% if logged_in? %>
-        <div class="ui dropdown item">
-          Account <i class="dropdown icon"></i>
-          <div class="menu">
-            <a class="item">todo</a>
-            <a class="item">todo</a>
-            <a class="item">todo</a>
+          <div class="item dropdown ui primary button">
+            <span class="text">Account</span>
+
+            <i class="dropdown icon"></i>
+
+
+            <div class="menu">
+              <%= link_to "Change password", sign_up_path, class: "ui link item" %>
+            </div>
           </div>
-        </div>
+
       <% end %>
 
     </div>
