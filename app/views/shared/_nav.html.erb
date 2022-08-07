@@ -1,7 +1,6 @@
 <nav class="ui borderless inverted huge menu">
   <div class="ui container">
     <%= link_to "Chatroom", root_path, class: "item" %>
-    <%= link_to "Messages", root_path, class: "item" %>
 
     <div class="right menu">
 
@@ -17,13 +16,10 @@
 
       <% if logged_in? %>
           <div class="item dropdown ui primary button">
-            <span class="text">Account</span>
-
+            <span class="text button">Account</span>
             <i class="dropdown icon"></i>
-
-
             <div class="menu">
-              <%= link_to "Change password", sign_up_path, class: "ui link item" %>
+              <%= link_to "Change password", edit_user_path(current_user), class: "ui link item" %>
             </div>
           </div>
 

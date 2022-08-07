@@ -1,0 +1,40 @@
+<%= render "shared/validation_errors", model: @user %>
+
+<div class="ui top attached center aligned header">
+  <h1 class="ui header">
+  Change password
+  </h1>
+</div>
+
+<section class="ui fluid attached huge segment padded secondary">
+
+  <%= form_with model: @user, url: user_path(@user), local: true, data: { turbo: false }, class: "ui form" do |f| %>
+
+    <div class="<%= class_names('required', 'field', error: @user.errors[:old_password].any? ) %>">
+      <%= f.label :old_password %>
+      <div class="ui left icon input">
+        <%= f.password_field :old_password, placeholder: "Old password" %>
+        <i class="lock icon"></i>
+      </div>
+    </div>
+
+    <div class="<%= class_names('required', 'field', error: @user.errors[:password].any? ) %>">
+      <%= f.label :password, "New password" %>
+      <div class="ui left icon input">
+        <%= f.password_field :password, placeholder: "New password" %>
+        <i class="lock icon"></i>
+      </div>
+    </div>
+
+    <div class="<%= class_names('required', 'field', error: @user.errors[:password_confirmation].any? ) %>">
+      <%= f.label :password_confirmation, "Repeat new password" %>
+      <div class="ui left icon input">
+        <%= f.password_field :password_confirmation, placeholder: "Repeat new password" %>
+        <i class="lock icon"></i>
+      </div>
+    </div>
+
+    <%= f.submit "Change password", class: "ui submit primary button" %>
+  <% end %>
+
+</section>
