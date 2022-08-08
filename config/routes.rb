@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "chatroom#index"
+  # messsage
+  post "/messsage", to: "messages#create"
   # session
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

@@ -8,12 +8,11 @@
 
   </div>
 
-  <form class="ui form">
-    <div class="field">
-      <textarea rows="3" placeholder="Enter a message..."></textarea>
-      <div class="ui bottom attached compact blue labeled submit icon button">
-        <i class="icon edit"></i> Send
-      </div>
+  <%= form_with scope: :message, url: messsage_path, role: "form", class: "ui form items" do |f| %>
+    <div class="field item">
+      <%= f.text_field :body, placeholder: "Enter your message..." %>
+      <%= f.submit "Send", class: "ui right floated blue button" %>
     </div>
-  </form>
+  <% end %>
+
 </div>
