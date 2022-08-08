@@ -14,10 +14,6 @@ class MessagesController < ApplicationController
   end
 
   def message_render(message)
-    if (message.user == current_user)
-      render(partial: "chatroom/messages/my_message", locals: { message: message })
-    else
-      render(partial: "chatroom/messages/message", locals: { message: message })
-    end
+    render(partial: "chatroom/message", locals: { message: message })
   end
 end

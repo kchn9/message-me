@@ -1,12 +1,10 @@
-<div class="ui segment small basic clearing"> <!-- clearing for my messages -->
-  <div class="comment ui segment right floated basic"> <!-- right floated for my messages -->
+<div class="ui small segment basic clearing">
+  <div class="ui comment segment basic">
     <a class="avatar">
       <%= get_avatar_for_username("#{message.user.username}") %>
     </a>
     <div class="content">
-      <a class="author">
         <%= link_to message.user.username, message.user, class: "author" %>
-      </a>
       <div class="metadata">
         <span class="date">
           <%= distance_of_time_in_words_to_now message.created_at %> ago

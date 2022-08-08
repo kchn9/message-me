@@ -8,11 +8,7 @@
   <div class="ui segment small container minimal comments" id="chat-container">
     <% if logged_in? %>
       <% @messages.each do |message| %>
-        <% if message.user == current_user %>
-          <%= render "chatroom/messages/my_message", message: message %>
-        <% else %>
-          <%= render "chatroom/messages/message", message: message %>
-        <% end %>
+        <%= render "message", message: message %>
       <% end %>
     <% else %>
       <%= render "chat_placeholder" %>
