@@ -9,16 +9,31 @@
       </h1>
   </section>
 
-  <section class="ui centered stackable padded grid">
-    <div class="eleven wide column">
-      <%= render "chat" %>
-    </div>
-    <div class="one wide column">
-    </div>
-    <div class="four wide column">
-      <%= render "user_list" %>
-    </div>
+  <section class="<%= class_names('ui', 'centered', 'blurring', 'stackable', 'padded', 'grid', 'disable-select': !logged_in?)%>"
+          style="<%="pointer-events:none; user-select: none;" if !logged_in?%>"
+  >
+
+      <div class="eleven wide column">
+        <%= render "chat" %>
+      </div>
+
+      <div class="one wide column"></div>
+
+      <div class="four wide column">
+        <%= render "user_list" %>
+      </div>
+
+      <div class="<%= class_names('dimmable', 'hidden': logged_in?, 'ui inverted dimmer': !logged_in?)%>", style="pointer-events: none;">
+        <div class="ui massive segment" style="pointer-events: auto;">
+          <i class="wechat icon"></i>
+            <%= link_to "Log in ", login_path %>
+            to join chat!
+          </h2>
+        </div>
+      </div>
+
   </section>
+
 </main>
 
 

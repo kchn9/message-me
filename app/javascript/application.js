@@ -16,4 +16,6 @@ $(document).on("turbo:load", () => {
       ;
   });
 
+  $('.dimmable').dimmer('show');
+
 });

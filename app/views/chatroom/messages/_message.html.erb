@@ -4,12 +4,10 @@
       <%= get_avatar_for_username("#{message.user.username}") %>
     </a>
     <div class="content">
-      <a class="author">
-        <%= message.user.username %>
-      </a>
+      <%= link_to message.user.username, message.user, class: "author" %>
       <div class="metadata">
         <span class="date">
-          <%= message.created_at %>
+          <%= distance_of_time_in_words_to_now message.created_at %> ago
         </span>
       </div>
       <div class="text">
