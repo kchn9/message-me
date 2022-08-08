@@ -1,0 +1,39 @@
+<main>
+  <section class="ui sizer vertial segment basic">
+      <h1 class="ui massive center aligned icon header">
+      <%= get_avatar_for_username @user.username %>
+        <div class="content">
+          <%= @user.username %> profile
+        </div>
+      </h1>
+  </section>
+
+  <section class="ui grid centered">
+
+    <div class="row">
+      <div class="ten wide column">
+        <section class="ui segments">
+          <div class="ui raised segment center aligned">
+            <p>Last seen ///todo///</p>
+          </div>
+          <div class="ui raised segment center aligned">
+            <p class="ui text">
+              Joined
+              <b><i>
+                <%= time_ago_in_words @user.created_at %>
+              </b></i>
+              ago
+            </p>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+    <section class="twelve wide column center aligned">
+      <%= link_to "Back", root_path, class: "ui button primary big" %>
+    </section>
+
+  </section>
+
+</main>

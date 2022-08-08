@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   # users
   get "/sign-up", to: "users#new"
   match "/sign-up", via: :post, to: "users#create"
-  resources :users, except: [:new, :create]
+  resources :users, only: [:show, :edit, :update]
 end

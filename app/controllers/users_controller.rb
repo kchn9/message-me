@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :show, :update]
+  before_action :require_user, only: [:edit, :show, :update]
+
   def new
     @user = User.new
+  end
+
+  def show
   end
 
   def create
@@ -14,11 +20,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     params = change_password_params
     if @user.authenticate(params[:old_password]) && @user.update({
       :password => params[:password],
@@ -40,6 +44,10 @@ class UsersController < ApplicationController
 
   def change_password_params
     params.require(:user).permit(:password, :password_confirmation, :old_password)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
 
