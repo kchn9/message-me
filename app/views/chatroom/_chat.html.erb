@@ -1,14 +1,25 @@
 <div class="ui raised padded blue secondary small segment container">
-  <div class="ui segment small container minimal comments">
 
-    <% @messages.each do |message|  %>
-      <%= render "chatroom/messages/my_message", message: message %>
-      <%= render "chatroom/messages/message", message: message %>
+  <h2 class="ui header center aligned">
+    <span class="content">Chatroom</span>
+    <div class="sub header">Stay connected with your loved ones.</div>
+  </h2>
+
+  <div class="ui segment small container minimal comments" id="chat-container">
+    <% if logged_in? %>
+      <% @messages.each do |message| %>
+        <% if message.user == current_user %>
+          <%= render "chatroom/messages/my_message", message: message %>
+        <% else %>
+          <%= render "chatroom/messages/message", message: message %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= render "chat_placeholder" %>
     <% end %>
-
   </div>
 
-  <%= form_with scope: :message, url: messsage_path, role: "form", class: "ui form items" do |f| %>
+  <%= form_with scope: :message, url: message_path, role: "form", remote: true, class: "ui form items" do |f| %>
     <div class="field item">
       <%= f.text_field :body, placeholder: "Enter your message..." %>
       <%= f.submit "Send", class: "ui right floated blue button" %>

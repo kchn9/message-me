@@ -1,13 +1,4 @@
 <main>
-  <section class="ui sizer vertial segment basic">
-      <h1 class="ui massive center aligned icon header">
-        <i class="paper plane outline icon"></i>
-        <div class="content">
-          Chatroom
-          <div class="sub header">Contact with your friends and enjoy your time.</div>
-        </div>
-      </h1>
-  </section>
 
   <section class="<%= class_names('ui', 'centered', 'blurring', 'stackable', 'padded', 'grid', 'disable-select': !logged_in?)%>"
           style="<%="pointer-events:none; user-select: none;" if !logged_in?%>"

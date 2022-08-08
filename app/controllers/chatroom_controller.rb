@@ -1,7 +1,7 @@
 class ChatroomController < ApplicationController
 
   def index
-    @messages = Message.all
+    @messages = Message.last(30)
     @users = User.all
   end
 
