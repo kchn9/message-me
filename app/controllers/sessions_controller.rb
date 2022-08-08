@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :require_not_logged_in, only: [:new, :create]
+
   def new
   end
 
@@ -24,6 +26,12 @@ class SessionsController < ApplicationController
   private
   def login_params
     params.require(:session).permit(:username, :password)
+  end
+
+  def require_not_logged_in
+    if logged_in?
+      redirect_to root_path
+    end
   end
 
 end
