@@ -1,15 +1,15 @@
-<nav class="ui borderless inverted huge menu">
+<nav class="ui borderless inverted tiny menu" style="border-radius: 0;">
   <div class="ui container">
-    <%= link_to "Chatroom", root_path, class: "item" %>
+    <%= link_to "Chatroom", root_path, class: "item ui sized large header " %>
 
     <div class="right menu">
 
       <div class="item">
         <div class="ui primary">
           <% if logged_in? %>
-            <%= link_to raw("<i class=\"alternative sign in icon\"></i>Log out"), login_path, data: { "turbo-method": :delete }, class: "ui primary button" %>
+            <%= link_to raw("<i class=\"alternative sign in icon\"></i>Log out"), login_path, data: { "turbo-method": :delete }, class: "ui primary fluid button" %>
           <% else %>
-            <%= link_to raw("<i class=\"alternative sign in icon\"></i>Log in"), login_path, class: "ui primary button" %>
+            <%= link_to raw("<i class=\"alternative sign in icon\"></i>Log in"), login_path, class: "ui primary fluid button" %>
           <% end %>
         </div>
       </div>

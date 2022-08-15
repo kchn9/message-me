@@ -2,10 +2,10 @@
 
   <h2 class="ui header center aligned">
     <span class="content">Chatroom</span>
-    <div class="sub header">Stay connected with your loved ones.</div>
+    <div class="sub header">Stay connected with your loved ones</div>
   </h2>
 
-  <div class="ui segment small container minimal comments" style="overflow-y: scroll; max-height: 64vh" id="chat-container">
+  <div class="ui segment container minimal comments" style="overflow-y: scroll; max-height: 64vh" id="chat-container">
     <% if logged_in? %>
       <% @messages.each do |message| %>
         <%= render "message", message: message %>

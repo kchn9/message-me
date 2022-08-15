@@ -1,4 +1,4 @@
 class Message < ApplicationRecord
   validates :body, presence: true
-  belongs_to :user, dependent: :delete
+  belongs_to :user
 end
