@@ -6,25 +6,19 @@
   </h2>
 
   <section class="ui unstackable items animated list">
-
     <% if logged_in? %>
       <% if @users %>
         <% @users.each do |user| %>
           <div class="item">
-
             <div class="ui tiny image">
-
               <%= get_avatar_for_username("#{user.username}") %>
-
             </div>
-
             <div class="middle aligned content">
               <%= link_to user.username, user, class: "ui header" %>
               <div class="description">
                   Joined <%= time_ago_in_words user.created_at %> ago
               </div>
             </div>
-
           </div>
         <% end %>
       <% end %>
@@ -40,6 +34,5 @@
         </div>
       </div>
     <% end %>
-
   </section>
 </div>

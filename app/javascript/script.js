@@ -9,16 +9,13 @@ import "channels"
 
 $(document).on("turbo:load", () => {
 
-  $('.ui.dropdown').dropdown();
-
   $('.message .close').on('click', function() {
-      $(this)
-        .closest('.message')
-        .transition('fade')
-      ;
+    $(this).closest('.message').transition('fade');
   });
 
+  $('.ui.dropdown').dropdown();
   $('.dimmable').dimmer('show');
 
-});
+  $("#messages-placeholder").addClass("hidden")
 
+});

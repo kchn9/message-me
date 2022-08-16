@@ -9,6 +9,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "placeholder.js", :defer => "defer" %>
   </head>
   <body>
     <%= render "shared/nav" %>
