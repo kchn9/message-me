@@ -5,15 +5,20 @@
     <div class="sub header">Meet new friends</div>
   </h2>
 
-  <section class="ui large animated small list">
+  <section class="ui unstackable items animated list">
 
     <% if @users %>
       <% @users.each do |user| %>
         <div class="item">
 
-          <%= get_avatar_for_username("#{user.username}") %>
+          <div class="ui tiny image">
+
+            <%= get_avatar_for_username("#{user.username}") %>
+
+          </div>
+
           <div class="content">
-            <%= link_to user.username, user, class: "header" %>
+            <%= link_to user.username, user, class: "ui header" %>
             <div class="description">
                 Joined <%= time_ago_in_words user.created_at %> ago
             </div>
