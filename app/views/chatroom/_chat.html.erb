@@ -15,7 +15,7 @@
     <% end %>
   </div>
 
-  <%= form_with scope: :message, url: message_path, role: "form", remote: true, class: "ui form items" do |f| %>
+  <%= form_with scope: :message, url: message_path, role: "form", class: "ui form items" do |f| %>
     <div class="field item">
       <%= f.text_field :body, placeholder: "Enter your message..." %>
       <%= f.submit "Send", class: "ui right floated blue button" %>

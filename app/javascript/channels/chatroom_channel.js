@@ -2,7 +2,7 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create({ channel: "ChatroomChannel"}, {
   connected() {
-    // Called when the subscription is ready for use on the server
+    $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
   },
 
   disconnected() {
@@ -11,5 +11,6 @@ consumer.subscriptions.create({ channel: "ChatroomChannel"}, {
 
   received(data) {
     $('#chat-container').append(data.mod_message);
+    $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
   }
 });
