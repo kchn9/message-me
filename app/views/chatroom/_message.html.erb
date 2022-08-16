@@ -1,18 +1,22 @@
-  <div class="comment">
-
-    <a class="avatar">
-      <%= get_avatar_for_username("#{message.user.username}") %>
-    </a>
-    <div class="content">
-        <%= link_to message.user.username, message.user, class: "author" %>
-      <div class="metadata">
-        <span class="date">
-          <%= distance_of_time_in_words_to_now message.created_at %> ago
-        </span>
+<turbo-stream action="append" target="chat">
+  <template>
+    <%= turbo_frame_tag message do %>
+      <div class="comment">
+        <a class="avatar">
+          <%= get_avatar_for_username("#{message.user.username}") %>
+        </a>
+        <div class="content">
+          <%= link_to message.user.username, message.user, class: "author" %>
+          <div class="metadata">
+            <span class="date">
+              <%= distance_of_time_in_words_to_now message.created_at %> ago
+            </span>
+          </div>
+          <div class="text">
+            <%= message.body %>
+          </div>
+        </div>
       </div>
-      <div class="text">
-        <%= message.body %>
-      </div>
-    </div>
-
-  </div>
+    <% end %>
+  </template>
+</turbo-stream>
