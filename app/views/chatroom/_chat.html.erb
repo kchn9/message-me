@@ -7,11 +7,9 @@
 
   <%= turbo_stream_from "chatroom_channel" %>
 
-  <div class="ui segment container minimal comments" style="overflow-y: scroll; max-height: 64vh" id="chat-container">
+  <div class="ui segment container minimal comments" style="overflow-y: scroll; height: 32vh; max-height: 64vh" data-controller="chat" >
     <%= turbo_frame_tag "chat" do %>
-
       <%= render "chat_placeholder" %>
-
       <% if logged_in? %>
         <% @messages.each do |message| %>
           <%= render "message", message: message %>
@@ -23,10 +21,13 @@
     <% end %>
   </div>
 
-  <%= form_with scope: :message, url: message_path, role: "form", class: "ui form items", id: "message-form" do |f| %>
-    <div class="field item">
-      <%= f.text_field :body, placeholder: "Enter your message...", id: "message-field" %>
-      <%= f.submit "Send", class: "ui right floated blue button" %>
+  <%= form_with scope: :message, role: "form", class: "ui form items",
+      data: { controller: "new-message", action: "turbo:submit-end->new-message#reset" },
+      url: message_path do |form|
+  %>
+    <div class="field ui grid container">
+      <%= form.text_field :body, placeholder: "Enter your message...", class: "thirteen wide column" %>
+      <%= form.submit "Send", class: "three wide column blue button fluid right floated ui" %>
     </div>
   <% end %>
 

@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     credentials = login_params
     user = User.find_by(username: credentials[:username])
     if user && user.authenticate(credentials[:password])
+      cookies[:username] = user.username
       session[:user_id] = user.id
       flash[:success] = "Welcome back, #{user.username}!"
       redirect_to root_path
@@ -19,6 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     flash[:success] = "Logged out succefully. Take care #{current_user.username}!"
+    cookies[:username] = 'guest'
     session[:user_id] = nil
     redirect_to root_path, status: :see_other
   end

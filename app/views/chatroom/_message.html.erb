@@ -1,7 +1,7 @@
 <turbo-stream action="append" target="chat">
   <template>
     <%= turbo_frame_tag message do %>
-      <div class="comment" id="message">
+      <div class="comment" id="message" data-chat-target="message">
         <a class="avatar">
           <%= get_avatar_for_username("#{message.user.username}") %>
         </a>
