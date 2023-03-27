@@ -20,4 +20,3 @@ Clone my-message from github and run it locally
 - Stimulus controllers
 - Better understanding of forms
 - Semantic UI
-- Heroku WebSocket deployment w/ redis
