@@ -1,10 +1,6 @@
 # Message Me
 
-Project implements chatroom that messages are sent over WebSocket protocol. First created with ActionCable channels then replaced by Turbo Stream. All finished on Heroku deployment.
-## Check it live
-
-https://kchn9-msgme.herokuapp.com
-
+Project implements chatroom that messages are sent over WebSocket protocol. First created with ActionCable channels then replaced by Turbo Stream.
 
 ## Run it local
 
